@@ -1,0 +1,23 @@
+{
+  "name": "azureproject",
+  "version": "1.0.0",
+  "description": "ShareFly tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamRandy/AzureProject.git"
+  },
+  "keywords": [
+    "web",
+    "developement"
+  ],
+  "author": "Randy Thai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamRandy/AzureProject/issues"
+  },
+  "homepage": "https://github.com/iamRandy/AzureProject#readme"
+}
