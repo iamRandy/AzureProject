@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/iamRandy/AzureProject/issues"
   },
-  "homepage": "https://github.com/iamRandy/AzureProject#readme"
+  "homepage": "https://github.com/iamRandy/AzureProject#readme",
+  "dependencies": {
+    "@azure/storage-blob": "^12.17.0"
+  }
 }

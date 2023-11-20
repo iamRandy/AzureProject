@@ -35,14 +35,14 @@
   width: 100px;
   height: 50px;
   background-color: aquamarine;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   text-decoration: none;
+  transition: transform 0.3s ease-in-out;
 }
 
 .button:hover {
-  width: 105px;
-  height: 55px;
+  border: 5px dotted rgba(255,255,255,0.9);
 }
 
 .App-link {
