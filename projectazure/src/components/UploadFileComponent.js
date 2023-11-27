@@ -2,10 +2,10 @@ import './../App.css';
 const { BlobServiceClient } = require("@azure/storage-blob");
 
 const account = "teststorageazureforwork";
-const sas = "sp=racwdli&st=2023-11-20T21:44:50Z&se=2023-11-23T05:44:50Z&spr=https&sv=2022-11-02&sr=c&sig=ZajGh6EnltihXQqkDYo1dZc0kWclErcQ9RQ8yHgKHHs%3D";
+const sas = "sp=racwdli&st=2023-11-27T20:14:38Z&se=2024-01-03T04:14:38Z&spr=https&sv=2022-11-02&sr=c&sig=qMpbFV5MDLid7imGxf5YZ0%2FNMaHpHlbj9BeW3TolgDM%3D";
 
 const containerName = 'myblob';
-const blobServiceClient = new BlobServiceClient(`https://${account}.blob.core.windows.net${sas}`);
+const blobServiceClient = new BlobServiceClient(`https://${account}.blob.core.windows.net?${sas}`);
 
 const UploadFileComponent = () => {
   const uploadFile = async (file) => {
@@ -14,14 +14,14 @@ const UploadFileComponent = () => {
     // const storageName = 'teststorageazureforwork';
     
     const containerClient = blobServiceClient.getContainerClient(containerName);
-    console.log("here1")
+    console.log("can you see me");
 
     // Generate a unique name for the blob (you can customize this logic)
     const blobName = `file_${new Date().getTime()}_${file.name}`;
 
     const blockBlobClient = containerClient.getBlockBlobClient(blobName);
     // Upload the file to Azure Blob Storage
-    const uploadBlobResponse = await blockBlobClient.upload(file, file.length);
+    const uploadBlobResponse = await blockBlobClient.uploadData(file, file.length);
     console.log(`Upload block blob ${blobName} successfully`, uploadBlobResponse.requestId);
     // await blockBlobClient.uploadData(file, {
     //   maxSingleShotSize: 4 * 1024 * 1024, // Adjust as needed
