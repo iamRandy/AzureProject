@@ -1,2 +1,0 @@
-# AzureProject
-Following some guidelines.
