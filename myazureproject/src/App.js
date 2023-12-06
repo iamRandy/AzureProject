@@ -1,5 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react'
+import { BlobServiceClient } from "@azure/storage-blob";
+
+const account = process.env.REACT_APP_STORAGE_ACCOUNT_NAME;
+const sas = process.env.REACT_APP_STORAGE_ACCOUNT_KEY;
+
+const containerName = 'myblob';
+const blobServiceClient = new BlobServiceClient(`https://${account}.blob.core.windows.net/?${sas}`);
 
 function App() {
   const [preview, setPreview] = useState();
@@ -14,7 +21,7 @@ function App() {
 
       const blockBlobClient = containerClient.getBlockBlobClient(blobName);
       // Upload the file to Azure Blob Storage
-      const uploadBlobResponse = await blockBlobClient.uploadData(file, file.length);
+      const uploadBlobResponse = await blockBlobClient.uploadData(file, file.size);
       console.log(`Upload block blob ${blobName} successfully`, uploadBlobResponse.requestId);
 
       // Generating a unique link for the user to share:
